@@ -71,7 +71,7 @@ class FileSystemOperations:
 
     def mount_elab(self, credentials):
         elab_path = self.path_manager.get_elab_path()
-        command = f'sudo mount -v -t cifs //njdc/Elab {elab_path} -o username="{credentials["username"]}",password="{credentials["password"]}",domain=magnetikallc,uid=1000'
+        command = f'sudo mount -v -t cifs //10.1.2.5/Elab {elab_path} -o username="{credentials["username"]}",password="{credentials["password"]}",domain=magnetikallc,uid=1000'
         print('Attempting to mount elab server...')
         try:
             output = subprocess.run(command, shell=True, check=True, capture_output=True)
